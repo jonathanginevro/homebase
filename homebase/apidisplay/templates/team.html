@@ -1,0 +1,11 @@
+<html>
+<head>
+    <title>API Display</title>
+</head>
+<body>
+    <h2>{{team.name}}</h2>
+    {% for i in roster %}
+    <strong>{{i.person.fullName}} <br> </strong>
+    {% endfor %}
+</body>
+</html>
