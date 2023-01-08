@@ -81,7 +81,7 @@ table, tr, td, th{
 td {
     padding: 0;
     margin: 0;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 table a:link, a:visited{
@@ -119,7 +119,7 @@ table a:link, a:visited{
 .namebox a{
     margin-left: 10px;
     color: #244D87;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .division td {
@@ -138,7 +138,7 @@ table a:link, a:visited{
 .division tr:first-child td{
     background-color: #3E9FCA !important;
     color: white;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .division tr:nth-child(odd) td{
@@ -171,7 +171,7 @@ table[id='AL East'], table[id='AL Central'], table[id='AL West']{
 .team tr:first-child td{
     background-color: #3E9FCA !important;
     color: white;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .team tr:nth-child(odd) td{
@@ -197,7 +197,7 @@ table[id='AL East'], table[id='AL Central'], table[id='AL West']{
 .team td:nth-child(3) {
     text-align: left;
     width: 40%;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .player {
@@ -212,7 +212,7 @@ table[id='AL East'], table[id='AL Central'], table[id='AL West']{
 .player tr:first-child td{
     background-color: #3E9FCA !important;
     color: white;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .player tr:nth-child(odd) td{
@@ -230,7 +230,7 @@ table[id='AL East'], table[id='AL Central'], table[id='AL West']{
 .player td:nth-child(2) {
     text-align: left;
     width: 40%;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .mini-player {
@@ -253,7 +253,7 @@ table[id='AL East'], table[id='AL Central'], table[id='AL West']{
     color: #3E9FCA;
     border-color: #244D87;
     border-radius: 0;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 13px;
 }
 
@@ -351,7 +351,7 @@ table[id='AL East'], table[id='AL Central'], table[id='AL West']{
 
 .article-header {
     font-size: 22px;
-    font-weight: bold;
+    font-weight: 600;
     margin: 13px 0;
     color: #244D87;
 }
@@ -387,16 +387,16 @@ table[id='AL East'], table[id='AL Central'], table[id='AL West']{
     margin-top: 2px;
     margin-right: 15px;
     color: #3E9FCA;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .team-standing-details {
     white-space: nowrap;
     margin-top: 2px;
     color: white;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 #btn {
-    font-weight: bold;
+    font-weight: 600;
 }
