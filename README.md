@@ -25,7 +25,7 @@ Lastly, to run the server, execute the following:
 ```
 
 ### Startup Script
-This entire process is included in the `start.sh` script. To run the script, execute the following:
+This entire process is included in the `start.sh` script. Execute the following to run the script:
 ```bash
 source ./start.sh
 ```
