@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.header {
+    background: #204377;
+    overflow: hidden;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.header img{
+    object-fit:cover;
+    width: 200px;
+    height:100%;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+body {
+    background-color: #244D87;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.circle {
+    height: 100px;
+    width: 100px;
+    line-height: 100px;
+
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.infobox {
+    padding-top: 25px;
+    display: flex;
+}
+
+.logo-text h3 {
+    margin-top: 0;
+}
+
+.logo-text h2 {
+    margin-bottom: 0;
+}
+
+.logo-text {
+    margin-left: 20px;
+}
+
+.logo {
+    height: 65%;
+    margin: auto;
+    display: block;
+}
+
+.header-text {
+    color: white;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+table {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table, tr, td, th{
+    border: none !important;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+}
+
+table a:link, a:visited{
+    text-decoration: none;
+}
+
+.division {
+    width: 49%;
+}
+
+.division:nth-child(3),
+.division:nth-child(4),
+.division:nth-child(5),
+.division:nth-child(6) {
+    margin-top: 20px;
+}
+
+.division:nth-child(1),
+.division:nth-child(3),
+.division:nth-child(5) {
+    margin-right: 20px;
+}
+
+.division:nth-child(2),
+.division:nth-child(4),
+.division:nth-child(6) {
+    margin-left: 20px;
+}
+
+.namebox {
+    display: flex;
+    align-items:center;
+}
+
+.namebox a{
+    margin-left: 10px;
+    color: #244D87;
+    font-weight: bold;
+}
+
+.division td {
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+
+.division td:first-child {
+    color: white;
+    text-align: left;
+    width: 50%;
+}
+
+.division tr:first-child td{
+    background-color: #3E9FCA !important;
+    color: white;
+    font-weight: bold;
+}
+
+.division tr:nth-child(odd) td{
+    background-color: #F7F7F7;
+}
+
+.division tr:nth-child(even) td{
+    background-color: white;
+}
+
+.division tr {
+    background-color: white;
+}
+
+table[id='AL East'], table[id='AL Central'], table[id='AL West']{
+    float: left;
+}
+
+.team {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.team td {
+    text-align: center;
+    height: 50px;
+}
+
+.team tr:first-child td{
+    background-color: #3E9FCA !important;
+    color: white;
+    font-weight: bold;
+}
+
+.team tr:nth-child(odd) td{
+    background-color: #F7F7F7;
+}
+
+.team tr:nth-child(even) td{
+    background-color: white;
+}
+
+.team tr {
+    background-color: white;
+}
+
+#special {
+    color: white;
+}
+
+.team td:nth-child(2) {
+    color: #3E9FCA;
+}
+
+.team td:nth-child(3) {
+    text-align: left;
+    width: 40%;
+    font-weight: bold;
+}
+
+.player {
+    width: 100%;
+}
+
+.player td {
+    text-align: center;
+    height: 50px;
+}
+
+.player tr:first-child td{
+    background-color: #3E9FCA !important;
+    color: white;
+    font-weight: bold;
+}
+
+.player tr:nth-child(odd) td{
+    background-color: #F7F7F7;
+}
+
+.player tr:nth-child(even) td{
+    background-color: white;
+}
+
+.player tr {
+    background-color: white;
+}
+
+.player td:nth-child(2) {
+    text-align: left;
+    width: 40%;
+    font-weight: bold;
+}
+
+.mini-player {
+    margin-left: auto;
+    order: 2;
+}
+
+.mini-player td {
+    order: 2;
+    background: #244D87;
+    vertical-align: top;
+    text-align: left;
+    padding-left: 30px;
+    color: white;
+    border: 1px solid;
+}
+
+.mini-player tr:first-child td {
+    vertical-align: bottom;
+    color: #3E9FCA;
+    border-color: #244D87;
+    border-radius: 0;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.mini-player tr {
+    border-color: #244D87;
+}
+
+.switch-button {
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    will-change: transform;
+    cursor: pointer;
+    border: 3px solid white;
+    border-radius: 100px;
+    background-color: white;
+    margin-left: auto;
+    order: 2;
+}
+
+.switch-button-case-left, .switch-button-case-right{
+    display: inline-block;
+    background: none;
+    width: 49%;
+    height: 100%;
+    color: #3E9FCA;
+    position: relative;
+    border: none;
+    transition: 0.3s ease all;
+    padding-bottom: 1px;
+}
+
+.switch-button .active {
+    color: #151515;
+    background-color: #3E9FCA;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    z-index: -1;
+    transition: 0.3s ease-out all;
+    border-radius: 100px;
+}
+
+.switch-button .active-case {
+    color: white;
+}
+
+.headshot {
+    padding-left: 20px;
+}
+
+.left {
+    float: left;
+    padding-right: 10px;
+    color: #3E9FCA;
+}
+
+.right {
+    white-space: nowrap;
+    color: white;
+}
+
+.right:link {
+    text-decoration: none;
+}
+
+.player-name {
+    padding-top: 20px;
+    padding-bottom: 2px;
+    color: white;
+}
+
+.story-box {
+    display: flex;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.story-box img {
+    display: inline-block;
+    width: 30vh;
+    height: 100%;
+    margin-right: 15px;
+    border-radius: 15px 0 0 15px;
+}
+
+#news {
+    margin-top: 25px;
+}
+
+.article-header {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 13px 0;
+    color: #244D87;
+}
+
+.story-box-text {
+    position: relative;
+}
+
+.read-more {
+    padding: 5px;
+    margin-bottom: 10px;
+    background-color: #3E9FCA;
+    border-radius: 5px;
+    color: white;
+    position: absolute;
+    bottom: 0;
+}
+
+.read-more:link {
+    text-decoration: none;
+}
+
+.team-name {
+    color: white;
+}
+
+.team-details {
+    display: flex;
+}
+
+.team-standing {
+    float: left;
+    margin-top: 2px;
+    margin-right: 15px;
+    color: #3E9FCA;
+    font-weight: bold;
+}
+
+.team-standing-details {
+    white-space: nowrap;
+    margin-top: 2px;
+    color: white;
+    font-weight: bold;
+}
+
+#btn {
+    font-weight: bold;
+}

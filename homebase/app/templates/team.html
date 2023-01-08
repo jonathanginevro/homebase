@@ -1,0 +1,167 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<head>
+    <title>HOMEBASE</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/homebase-icon.png' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="header">
+        <div class="container">
+            <a href="/"><img src="{% static 'images/homebase-logo.png' %}"></a>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+
+        <div class="infobox">
+            <div class="circle">
+                <img class="logo" src="https://www.mlbstatic.com/team-logos/{{team.id}}.svg">
+            </div>
+            <div class="logo-text">
+                <h2 class="team-name">{{team.name}}</h2>
+                <div class="team-details">
+                    <p class="team-standing">{{standings.divisionRank}}{{ending}} in {{division}}</p>
+                    <p class="team-standing-details">{{standings.wins}}-{{standings.losses}} ({{standings.winningPercentage}}) · {{standings.leagueGamesBack}} GB</p>
+                </div>
+            </div>
+            <div class="switch-button"><span class="active"></span>
+                <button class="switch-button-case-left active-case" id="btn">Hitters</button>
+                <button class="switch-button-case-right" id="btn">Pitchers</button>
+            </div>
+        </div>
+
+        <table class="team" id="hitters">
+            <tr>
+                <td>Pos</td>
+                <td id="special">#</td>
+                <td>Player</td>
+                <td>Age</td>
+                <td>B</td>
+                <td>T</td>
+                <td>PA</td>
+                <td>H</td>
+                <td>2B</td>
+                <td>3B</td>
+                <td>HR</td>
+                <td>SB</td>
+                <td>SO%</td>
+                <td>BB%</td>
+                <td>AVG</td>
+                <td>OBP</td>
+                <td>OPS</td>
+            </tr>
+            {% for player in hitters %}
+                <tr>
+                    <td>{{player.Pos}}</td>
+                    <td>{{player.Num}}</td>
+                    <td>
+                        <div class="namebox">
+                            <img src="https://content.mlb.com/images/headshots/current/60x60/{{player.Id}}.png" onError="this.onerror=null;this.src='https://www.mlbstatic.com/team-logos/{{team.id}}.svg';this.style.height='60px';this.style.width='60px'">
+                            <a href="/{{team.id}}/{{player.Id}}/">{{player.Last}}, {{player.First}}</a>
+                        </div>
+                    </td>
+                    <td>{{player.Age}}</td>
+                    <td>{{player.B}}</td>
+                    <td>{{player.T}}</td>
+                    <td>{{player.PA}}</td>
+                    <td>{{player.H}}</td>
+                    <td>{{player.2B}}</td>
+                    <td>{{player.3B}}</td>
+                    <td>{{player.HR}}</td>
+                    <td>{{player.SB}}</td>
+                    <td>{{player.SOPer}}</td>
+                    <td>{{player.BBPer}}</td>
+                    <td>{{player.AVG}}</td>
+                    <td>{{player.OBP}}</td>
+                    <td>{{player.OPS}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+
+        <table class="team" id="pitchers">
+            <tr>
+                <td>Pos</td>
+                <td id="special">#</td>
+                <td>Pitcher</td>
+                <td>Age</td>
+                <td>T</td>
+                <td>IP</td>
+                <td>ERA</td>
+                <td>SO</td>
+                <td>BB</td>
+                <td>SO%</td>
+                <td>BB%</td>
+                <td>HR/9</td>
+                <td>OPS</td>
+            </tr>
+            {% for player in pitchers %}
+                <tr>
+                    <td>{{player.Pos}}</td>
+                    <td>{{player.Num}}</td>
+                    <td>
+                        <div class="namebox">
+                            <img src="https://content.mlb.com/images/headshots/current/60x60/{{player.Id}}.png" onError="this.onerror=null;this.src='https://www.mlbstatic.com/team-logos/{{team.id}}.svg';this.style.height='60px';this.style.width='60px'">
+                            <a href="/{{team.id}}/{{player.Id}}/">{{player.Last}}, {{player.First}}</a>
+                        </div>
+                    </td>
+                    <td>{{player.Age}}</td>
+                    <td>{{player.T}}</td>
+                    <td>{{player.IP}}</td>
+                    <td>{{player.ERA}}</td>
+                    <td>{{player.SO}}</td>
+                    <td>{{player.BB}}</td>
+                    <td>{{player.SOPer}}</td>
+                    <td>{{player.BBPer}}</td>
+                    <td>{{player.HRPer9}}</td>
+                    <td>{{player.OPS}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+
+    $('#pitchers').hide()
+
+    var switchBtnRight = document.querySelector('.switch-button-case-right');
+    var switchBtnLeft = document.querySelector('.switch-button-case-left');
+    var activeSwitch = document.querySelector('.active');
+
+    function switchLeft(){
+        switchBtnRight.classList.remove('active-case');
+        switchBtnLeft.classList.add('active-case');
+        activeSwitch.style.left = '0%';
+        $('#pitchers').hide()
+        $('#hitters').show()
+    }
+
+    function switchRight(){
+        switchBtnRight.classList.add('active-case');
+        switchBtnLeft.classList.remove('active-case');
+        activeSwitch.style.left = '50%';
+        $('#pitchers').show()
+        $('#hitters').hide()
+    }
+
+    switchBtnLeft.addEventListener('click', function(){
+        switchLeft();
+    }, false);
+
+    switchBtnRight.addEventListener('click', function(){
+        switchRight();
+    }, false);
+    
+</script>
+</html>

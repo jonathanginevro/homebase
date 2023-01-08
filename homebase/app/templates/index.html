@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<head>
+    <title>HOMEBASE</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/homebase-icon.png' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="header">
+        <div class="container">
+            <a href="/"><img src="{% static 'images/homebase-logo.png' %}"></a>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <h2 class="header-text">Teams</h2>
+
+        <div class="table-container">
+            {% for division in response %}
+                <table class="division" id="{{division.name}}">
+                    <tr>
+                        <td>{{division.name}}</td>
+                        <td>W</td>
+                        <td>L</td>
+                        <td>Pct</td>
+                        <td>GB</td>
+                        <td>L10</td>
+                        <td>DIFF</td>
+                    </tr>
+                    {% for team in division.teamRecords %}
+                        <tr>
+                            <td>
+                                <div class="namebox">
+                                    <img src="https://www.mlbstatic.com/team-logos/{{team.id}}.svg" style="width:20px;height:20px;">
+                                    <a href="/{{team.id}}/">{{team.abb_name}}</a>
+                                </div>
+                            </td>
+                            <td>{{team.W}}</td>
+                            <td>{{team.L}}</td>
+                            <td>{{team.Pct}}</td>
+                            <td>{{team.GB}}</td>
+                            <td>{{team.L10}}</td>
+                            <td>{{team.DIFF}}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            {% endfor %}
+        </div>
+        
+        <h2 class="header-text" id="news">Recent Stories</h2>
+        {% for story in stories %}
+            <div class="story-box">
+                <img src="{{story.img}}">
+                <div class="story-box-text">
+                    <p class="article-header">{{story.title}}</p>
+                    <p>By: {{story.author}} · {{story.date}}</p>
+                    <a class="read-more" href="{{story.link}}">Read More</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>

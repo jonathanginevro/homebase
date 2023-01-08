@@ -1,0 +1,152 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<head>
+    <title>HOMEBASE</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/homebase-icon.png' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="header">
+        <div class="container">
+            <a href="/"><img src="{% static 'images/homebase-logo.png' %}"></a>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="infobox">
+            <img class="headshot" src="https://content.mlb.com/images/headshots/current/60x60/{{player.Id}}@2x.png" onError="this.onerror=null;this.src='https://www.mlbstatic.com/team-logos/{{player.TeamId}}.svg';this.style.height='120px';this.style.width='120px'">
+            <div class="logo-text">
+                <h2 class="player-name">{{player.Name}}</h2>
+                <h3 class="left">{{player.Position}}</h3>
+                <a class="right" href="/{{player.TeamId}}/"><h3>{{player.Team}}</h3></a>
+            </div>
+            <table class="mini-player">
+                <tr>
+                    <td>B/T</td>
+                    <td>Age</td>
+                    <td>H</td>
+                    <td>W</td>
+                    <td>Drafted</td>
+                </tr>
+                <tr>
+                    <td>{{player.B}}/{{player.T}}</td>
+                    <td>{{player.Age}}</td>
+                    <td>{{player.H}}</td>
+                    <td>{{player.W}}</td>
+                    <td>{{player.Drafted}}</td>
+                </tr>
+            </table>
+        </div>
+
+        <table class="player" id="pitcher">
+            <tr>
+                <td>Year</td>
+                <td>Team</td>
+                <td>G</td>
+                <td>IP</td>
+                <td>W</td>
+                <td>L</td>
+                <td>SV</td>
+                <td>ERA</td>
+                <td>WHIP</td>
+                <td>H</td>
+                <td>R</td>
+                <td>SO</td>
+                <td>BB</td>
+                <td>HR/9</td>
+                <td>OPS</td>
+            </tr>
+            {% for year in stats %}
+                <tr>
+                    <td>{{year.Year}}</td>
+                    <td>
+                        <div class="namebox">
+                            <img src="https://www.mlbstatic.com/team-logos/{{year.TeamId}}.svg" style="width:30px;height:30px;" onError="this.onerror=null;this.src='https://www.sportstravelmagazine.com/wp-content/uploads/2019/01/1200px-Major_League_Baseball_logo.square.jpg';">
+                            <a href="/{{year.TeamId}}/">{{year.Team}}</a>
+                        </div>
+                    </td>
+                    <td>{{year.G}}</td>
+                    <td>{{year.IP}}</td>
+                    <td>{{year.W}}</td>
+                    <td>{{year.L}}</td>
+                    <td>{{year.SV}}</td>
+                    <td>{{year.ERA}}</td>
+                    <td>{{year.WHIP}}</td>
+                    <td>{{year.H}}</td>
+                    <td>{{year.R}}</td>
+                    <td>{{year.SO}}</td>
+                    <td>{{year.BB}}</td>
+                    <td>{{year.HRPer9}}</td>
+                    <td>{{year.OPS}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+
+        <table class="player" id="hitter">
+            <tr>
+                <td>Year</td>
+                <td>Team</td>
+                <td>G</td>
+                <td>PA</td>
+                <td>AB</td>
+                <td>R</td>
+                <td>H</td>
+                <td>2B</td>
+                <td>3B</td>
+                <td>HR</td>
+                <td>RBI</td>
+                <td>SB</td>
+                <td>BB</td>
+                <td>SO</td>
+                <td>OBP</td>
+                <td>SLG</td>
+                <td>OPS</td>
+            </tr>
+            {% for year in stats %}
+                <tr>
+                    <td>{{year.Year}}</td>
+                    <td>
+                        <div class="namebox">
+                            <img src="https://www.mlbstatic.com/team-logos/{{year.TeamId}}.svg" style="width:30px;height:30px;" onError="this.onerror=null;this.src='https://www.sportstravelmagazine.com/wp-content/uploads/2019/01/1200px-Major_League_Baseball_logo.square.jpg';">
+                            {{year.Team}}
+                        </div>
+                    </td>
+                    <td>{{year.G}}</td>
+                    <td>{{year.PA}}</td>
+                    <td>{{year.AB}}</td>
+                    <td>{{year.R}}</td>
+                    <td>{{year.H}}</td>
+                    <td>{{year.2B}}</td>
+                    <td>{{year.3B}}</td>
+                    <td>{{year.HR}}</td>
+                    <td>{{year.RBI}}</td>
+                    <td>{{year.SB}}</td>
+                    <td>{{year.BB}}</td>
+                    <td>{{year.SO}}</td>
+                    <td>{{year.OBP}}</td>
+                    <td>{{year.SLG}}</td>
+                    <td>{{year.OPS}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+
+        if ("{{player.Position}}" == "P") {
+            $('#hitter').hide()
+        } else {
+            $('#pitcher').hide()
+        }
+        
+    </script>
+</body>
+</html>
