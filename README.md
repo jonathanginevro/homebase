@@ -4,7 +4,7 @@ Homebase is a baseball web application that showcases standings and statistics f
 
 ### Setup Steps
 
-Firstly, the following must be installed to setup our virtual environment and run the application. This includes pipenv, Django, requests, lxml and beautifulsoup4. This can be done using the following:
+Firstly, the following must be installed to setup the virtual environment and run the application. This includes pipenv, Django, requests, lxml and beautifulsoup4. This can be done using the following:
 ```bash
 pip install pipenv
 pip install Django
