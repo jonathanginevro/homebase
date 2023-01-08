@@ -1,6 +1,6 @@
 # Homebase :baseball:
 
-Homebase is a baseball web application that showcases standings and statistics for MLB teams and players. To run this program, please refer to the setup steps listed below. Alternatively, there are instructions at the bottom for a startup stript that executes all steps.
+Homebase is a baseball web application that showcases standings and statistics for MLB teams and players. To run this program, refer to the setup steps listed below. Alternatively, there are instructions at the bottom for a startup stript that executes all steps.
 
 ### Setup Steps
 
