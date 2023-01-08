@@ -1,4 +1,4 @@
-# Homebase
+# Homebase :baseball:
 
 The following set of steps outline the process to setup and run the application.
 
