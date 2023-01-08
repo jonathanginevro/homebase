@@ -41,7 +41,10 @@ def index(request):
     for key in div_dict.keys():
         records.append(div_dict[key])
 
-    raw = requests.get('https://www.mlb.com/feeds/news/rss.xml')
+    req = requests.Session()
+    req.max_redirects = 3
+    raw = req.get('https://www.mlb.com/feeds/news/rss.xml', allow_redirects=False)
+
     soup = BeautifulSoup(raw.content, 'xml')
     articles = soup.findAll('item')
 
