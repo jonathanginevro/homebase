@@ -1,10 +1,10 @@
 # Homebase :baseball:
 
-The following set of steps outline the process to setup and run the application.
+Homebase is a baseball web application that showcases standings and statistics for MLB teams and players. To run this program, refer to the startup steps listed below. Alternatively, there are instructions at the bottom for a startup stript that executes all steps.
 
-### Setup Steps
+### Startup Steps
 
-Firstly, the following must be installed to setup our virtual environment and run the application. This includes pipenv, Django, requests, lxml and beautifulsoup4. This can be done using the following:
+Firstly, the following must be installed to setup the virtual environment and run the application. This includes pipenv, Django, requests, lxml and beautifulsoup4. This can be done using the following:
 ```bash
 pip install pipenv
 pip install Django
@@ -24,7 +24,7 @@ Lastly, to run the server, execute the following:
 ./homebase/manage.py runserver
 ```
 
-### Setup Script
+### Startup Script
 This entire process is included in the `start.sh` script. To run the script, execute the following:
 ```bash
 source ./start.sh
