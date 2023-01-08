@@ -4,20 +4,20 @@ Homebase is a baseball web application that showcases standings and statistics f
 
 ### Startup Steps
 
-Firstly, to setup the virtual environment, install pipenv and make the following initializations
+Firstly, to setup the virtual environment, install pipenv and make the following initializations:
 ```bash
 pip install pipenv
 python3 -m virtualenv venv
 source venv/bin/activate
 ```
-We the need to make the necessary remaining installiations. This includes Django, requests, lxml and beautifulsoup4. This can be done by running the following:
+There are other installiations that need to be made in the virtual environment. This includes Django, requests, lxml and beautifulsoup4. This can be done by running the following:
 ```bash
 pip install Django
 pip install requests
 pip install lxml
 pip install beautifulsoup4
 ```
-Lastly, to initialize our database and run the server, execute the following:
+Lastly, to initialize the database and run the server, execute the following:
 ```bash
 ./homebase/manage.py migrate
 ./homebase/manage.py runserver
