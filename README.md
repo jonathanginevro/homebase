@@ -1,6 +1,6 @@
 # Homebase :baseball:
 
-The following set of steps outline the process to setup and run the application.
+To run this program, please refer to the setup steps listed below. Alternatively, there are instructions at the bottom for a startup stript that executes all steps.
 
 ### Setup Steps
 
